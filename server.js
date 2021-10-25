@@ -22,10 +22,6 @@ app.get('/home', function(req, res) {
   res.render('home');
 })
 
-app.listen(3000, function() {
-  console.log('Listening on port 3000')
-})
-
 app.get('/students', function(req, res) {
   studentsDB.find({}, function(error, student) {
     res.render(('students/index'), {
@@ -34,3 +30,8 @@ app.get('/students', function(req, res) {
     })
   })
 })
+
+app.get('/students/:id', function(req, res) {
+	console.log(`The value for the :id route parameter is: ${req.params.id}`);
+	res.render('students/show', {student: studentsDB.find(req.params.id)});
+});
