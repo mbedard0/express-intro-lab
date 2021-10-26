@@ -31,7 +31,16 @@ app.get('/students', function(req, res) {
   })
 })
 
-app.get('/students/:id', function(req, res) {
-	console.log(`The value for the :id route parameter is: ${req.params.id}`);
-	res.render('students/show', {student: studentsDB.find(req.params.id)});
-});
+// app.get('/students/:id', function(req, res) {
+// 	console.log(`The value for the :id route parameter is: ${req.params.id}`);
+	// res.render('students/show', {student: {name: 'Lisa', age: 14, _id: 20071115}})
+//   const {id} = req.params.id;
+// 	res.render('students/show', studentsDB.find({id}, function(student) {
+//     student._id==={id}}))
+// });
+
+// Tell the app to listen on port 3000
+
+app.listen(3000, function() {
+  console.log('Listening on port 3000')
+})
